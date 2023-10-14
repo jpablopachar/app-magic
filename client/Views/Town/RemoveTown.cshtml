@@ -1,0 +1,66 @@
+@model client.Dtos.TownDto
+
+@{
+    ViewData["Title"] = "RemoverVilla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="RemoveTown">
+    <div class="container border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input hidden asp-for="Id" />
+        <div class="row">
+            <h2 class="text-info">Remover Villa</h2>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Nombre de la Villa</label>
+                <input asp-for="Name" disabled class="form-control" />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Tarifa</label>
+                <input asp-for="Fee" disabled class="form-control" />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Detalle</label>
+                <textarea asp-for="Detail" disabled class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Imagen</label>
+                <input asp-for="ImageUrl" disabled class="form-control" />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Ocupantes</label>
+                <input asp-for="Occupants" disabled class="form-control" />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Metros Cuadrados</label>
+                <input asp-for="SquareMeter" disabled class="form-control" />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Amenidad</label>
+                <textarea asp-for="Amenity" disabled class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-md-block mt-2">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-controller="Town" asp-action="IndexTown" class="btn btn-success">Regresar</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

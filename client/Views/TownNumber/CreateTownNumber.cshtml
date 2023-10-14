@@ -1,0 +1,42 @@
+@model client.ViewModels.TownNumberResponseVm;
+
+@{
+    ViewData["Title"] = "CrearNumeroVilla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="CreateTownNumber">
+    <div class="container border p-3">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-info">Crear Numero de Villa</h2>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Numero de Villa</label>
+                <input asp-for="TownNumber.TownNo" class="form-control" />
+                <span asp-validation-for="TownNumber.TownNo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Villa</label>
+                <select asp-for="TownNumber.TownId" class="form-select" asp-items="@Model.TownsList">
+                    <option value="">-- Seleccione una Villa --</option>
+                </select>
+                <span asp-validation-for="TownNumber.TownId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Detalle Especial</label>
+                <textarea asp-for="TownNumber.SpecialDetail" class="form-control"></textarea>
+                <span asp-validation-for="TownNumber.SpecialDetail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-md-block mt-2">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-controller="TownNumber" asp-action="IndexTownNumber" class="btn btn-success">Regresar</a>
+        </div>
+    </div>
+</form>
