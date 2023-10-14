@@ -32,9 +32,9 @@
                     <td>@town.Occupants</td>
                     <td>@((town.Fee).ToString("c"))</td>
                     <td>
-                        <a asp-controller="Town" asp-action="UpdateTown" asp-route-villaId="@town.Id"
+                        <a asp-controller="Town" asp-action="UpdateTown" asp-route-townId="@town.Id"
                             class="btn btn-success"><i class="bi bi-pencil-square"></i> </a>
-                        <a asp-controller="Town" asp-action="RemoveTown" asp-route-villaId="@town.Id"
+                        <a asp-controller="Town" asp-action="RemoveTown" asp-route-townId="@town.Id"
                             class="btn btn-danger"><i class="bi bi-trash-fill"></i> </a>
                     </td>
                 </tr>

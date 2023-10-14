@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class MyFirstMigration : Migration
+    public partial class MySecondMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -200,8 +200,7 @@ namespace server.Migrations
                 name: "TownsNumber",
                 columns: table => new
                 {
-                    TownNo = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TownNo = table.Column<int>(type: "int", nullable: false),
                     TownId = table.Column<int>(type: "int", nullable: false),
                     SpecialDetail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -223,8 +222,8 @@ namespace server.Migrations
                 columns: new[] { "Id", "Amenity", "CreationDate", "Detail", "Fee", "ImageUrl", "Name", "Occupants", "SquareMeter", "UpdateDate" },
                 values: new object[,]
                 {
-                    { 1, "", new DateTime(2023, 10, 13, 18, 19, 48, 201, DateTimeKind.Local).AddTicks(7532), "Detalle de la villa", 200.0, "", "Villa Real", 5, 50, new DateTime(2023, 10, 13, 18, 19, 48, 201, DateTimeKind.Local).AddTicks(7548) },
-                    { 2, "", new DateTime(2023, 10, 13, 18, 19, 48, 201, DateTimeKind.Local).AddTicks(7550), "Detalle de la villa", 150.0, "", "Vista Premium de la Piscina", 4, 40, new DateTime(2023, 10, 13, 18, 19, 48, 201, DateTimeKind.Local).AddTicks(7551) }
+                    { 1, "", new DateTime(2023, 10, 14, 13, 41, 17, 710, DateTimeKind.Local).AddTicks(7516), "Detalle de la villa", 200.0, "", "Villa Real", 5, 50, new DateTime(2023, 10, 14, 13, 41, 17, 710, DateTimeKind.Local).AddTicks(7555) },
+                    { 2, "", new DateTime(2023, 10, 14, 13, 41, 17, 710, DateTimeKind.Local).AddTicks(7557), "Detalle de la villa", 150.0, "", "Vista Premium de la Piscina", 4, 40, new DateTime(2023, 10, 14, 13, 41, 17, 710, DateTimeKind.Local).AddTicks(7558) }
                 });
 
             migrationBuilder.CreateIndex(

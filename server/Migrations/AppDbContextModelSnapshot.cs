@@ -200,37 +200,34 @@ namespace server.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreationDate = new DateTime(2023, 10, 13, 18, 19, 48, 201, DateTimeKind.Local).AddTicks(7532),
+                            CreationDate = new DateTime(2023, 10, 14, 13, 41, 17, 710, DateTimeKind.Local).AddTicks(7516),
                             Detail = "Detalle de la villa",
                             Fee = 200.0,
                             ImageUrl = "",
                             Name = "Villa Real",
                             Occupants = 5,
                             SquareMeter = 50,
-                            UpdateDate = new DateTime(2023, 10, 13, 18, 19, 48, 201, DateTimeKind.Local).AddTicks(7548)
+                            UpdateDate = new DateTime(2023, 10, 14, 13, 41, 17, 710, DateTimeKind.Local).AddTicks(7555)
                         },
                         new
                         {
                             Id = 2,
                             Amenity = "",
-                            CreationDate = new DateTime(2023, 10, 13, 18, 19, 48, 201, DateTimeKind.Local).AddTicks(7550),
+                            CreationDate = new DateTime(2023, 10, 14, 13, 41, 17, 710, DateTimeKind.Local).AddTicks(7557),
                             Detail = "Detalle de la villa",
                             Fee = 150.0,
                             ImageUrl = "",
                             Name = "Vista Premium de la Piscina",
                             Occupants = 4,
                             SquareMeter = 40,
-                            UpdateDate = new DateTime(2023, 10, 13, 18, 19, 48, 201, DateTimeKind.Local).AddTicks(7551)
+                            UpdateDate = new DateTime(2023, 10, 14, 13, 41, 17, 710, DateTimeKind.Local).AddTicks(7558)
                         });
                 });
 
             modelBuilder.Entity("server.Models.TownNumber", b =>
                 {
                     b.Property<int>("TownNo")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TownNo"));
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");

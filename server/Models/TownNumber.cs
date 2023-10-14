@@ -5,7 +5,7 @@ namespace server.Models
 {
     public class TownNumber
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TownNo { get; set; }
         [Required]
         public int TownId { get; set; }

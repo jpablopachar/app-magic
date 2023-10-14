@@ -15,8 +15,8 @@ namespace server.Profiles
             CreateMap<Town, TownUpdateDto>().ReverseMap();
 
             CreateMap<TownNumber, TownNumberResponseDto>().ReverseMap();
-            CreateMap<TownNumber, TownRequestDto>().ReverseMap();
-            CreateMap<TownNumber, TownUpdateDto>().ReverseMap();
+            CreateMap<TownNumber, TownNumberRequestDto>().ReverseMap();
+            CreateMap<TownNumber, TownNumberUpdateDto>().ReverseMap();
             CreateMap<UserApp, UserDto>().ReverseMap();
         }
     }
