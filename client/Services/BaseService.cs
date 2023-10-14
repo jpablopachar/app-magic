@@ -50,21 +50,13 @@ namespace client.Services
 
                 if (apiRequest.Data != null) message.Content = new StringContent(JsonConvert.SerializeObject(apiRequest.Data), Encoding.UTF8, "application/json");
 
-                switch (apiRequest.ApiType)
+                message.Method = apiRequest.ApiType switch
                 {
-                    case API_TYPE.POST:
-                        message.Method = HttpMethod.Post;
-                        break;
-                    case API_TYPE.PUT:
-                        message.Method = HttpMethod.Put;
-                        break;
-                    case API_TYPE.DELETE:
-                        message.Method = HttpMethod.Delete;
-                        break;
-                    default:
-                        message.Method = HttpMethod.Get;
-                        break;
-                }
+                    API_TYPE.POST => HttpMethod.Post,
+                    API_TYPE.PUT => HttpMethod.Put,
+                    API_TYPE.DELETE => HttpMethod.Delete,
+                    _ => HttpMethod.Get,
+                };
 
                 HttpResponseMessage apiResponse = null!;
 

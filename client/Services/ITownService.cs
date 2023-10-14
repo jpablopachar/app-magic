@@ -12,7 +12,7 @@ namespace client.Services
 
         public Task<T> CreateTown<T>(string token, TownRequestDto townRequestDto);
 
-        public Task<T> UpdateTown<T>(string token, int id, TownUpdateDto townUpdateDto);
+        public Task<T> UpdateTown<T>(string token, TownUpdateDto townUpdateDto);
 
         public Task<T> RemoveTown<T>(string token, int id);
     }
