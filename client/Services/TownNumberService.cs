@@ -57,13 +57,13 @@ namespace client.Services
             });
         }
 
-        public Task<T> UpdateTownNumber<T>(string token, int id, TownNumberUpdateDto townNumberUpdateDto)
+        public Task<T> UpdateTownNumber<T>(string token, TownNumberUpdateDto townNumberUpdateDto)
         {
             return SendAsync<T>(new ApiRequest
             {
                 ApiType = API_TYPE.PUT,
                 Data = townNumberUpdateDto,
-                Url = $"{_townNumberUrl}/api/v1/townNumber/{id}",
+                Url = $"{_townNumberUrl}/api/v1/townNumber/{townNumberUpdateDto.TownId}",
                 Token = token
             });
         }
