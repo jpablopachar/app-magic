@@ -28,7 +28,7 @@ namespace server.Controllers.v1
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin", AuthenticationSchemes = "Bearer")]
         public async Task<ActionResult<ApiResponse>> GetTownsNumber()
         {
             try
@@ -53,7 +53,7 @@ namespace server.Controllers.v1
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin", AuthenticationSchemes = "Bearer")]
         public async Task<ActionResult<ApiResponse>> GetTownNumber(int id)
         {
             try
@@ -94,7 +94,7 @@ namespace server.Controllers.v1
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin", AuthenticationSchemes = "Bearer")]
         public async Task<ActionResult<ApiResponse>> CreateTownNumber([FromBody] TownNumberRequestDto townNumberRequestDto)
         {
             try
@@ -141,7 +141,7 @@ namespace server.Controllers.v1
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin", AuthenticationSchemes = "Bearer")]
         public async Task<ActionResult<ApiResponse>> UpdateTownNumber(int id, [FromBody] TownNumberUpdateDto townNumberUpdateDto)
         {
             if (townNumberUpdateDto == null || id != townNumberUpdateDto.TownNo)
@@ -172,7 +172,7 @@ namespace server.Controllers.v1
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin", AuthenticationSchemes = "Bearer")]
         public async Task<ActionResult<ApiResponse>> DeleteTownNumber(int id)
         {
             try
