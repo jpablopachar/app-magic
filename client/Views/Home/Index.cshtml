@@ -1,8 +1,57 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Components;
+
+@model client.ViewModels.TownPagedVm;
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if (Model.TownsList != null)
+{
+    <div class="row" style="--bs-gutter-x:0">
+        @foreach (var town in Model.TownsList!)
+        {
+            <div class="p-4 col-md-12 col-lg-6">
+                <div class="row" style="border-radius: 20px; border: 1px solid;">
+                    <div class="col-4">
+                        <img src="@town.ImageUrl" alt="Town Image" class="d-block w-100 mt-2" style="border-radius: 20px;">
+                    </div>
+                    <div class="col-8">
+                        <p class="card-title text-info" style="font-size:xx-large">@town.Name</p>
+                        <p class="card-text">@((MarkupString)town.Detail!)</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="row pb-3 pt-2">
+                            <div class="col-12 col-sm-4">
+                                <a href="" class="btn btn-primary form-control btn-block">Reservar</a>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <span class="pt-1 fw-bold fs-6">Ocupantes : @town.Occupants</span><br />
+                                <span class="pt-1 fw-bold fs-6">Tamaño : @town.SquareMeter m &sup2</span><br />
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <span class="text-info float-end font-weight-bold pt-1 fw-bold" style="font-size:18px">
+                                    Usd
+                                    <span style="border-bottom:1px solid #0323EE">@town.Fee.ToString("c")</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+<a asp-action="Index" asp-route-pageNumber="@(1)" class="btn btn-outline-primary  000000">
+    <i class="bi bi-skip-start-fill"></i>
+</a>
+<a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber - 1)" class="btn btn-outline-primary @Model.Prev">
+    Anterior
+</a>
+<span>Pagina @Model.PageNumber de @Model.TotalPages </span>
+<a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber + 1)" class="btn btn-outline-primary @Model.Next">
+    Siguiente
+</a>
+<a asp-action="Index" asp-route-pageNumber="@Model.TotalPages" class="btn btn-outline-primary">
+    <i class="bi bi-skip-end-fill"></i>
+</a>
