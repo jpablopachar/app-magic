@@ -63,7 +63,7 @@ namespace client.Services
             {
                 ApiType = API_TYPE.PUT,
                 Data = townNumberUpdateDto,
-                Url = $"{_townNumberUrl}/api/v1/townNumber/{townNumberUpdateDto.TownId}",
+                Url = $"{_townNumberUrl}/api/v1/townNumber/{townNumberUpdateDto.TownNo}",
                 Token = token
             });
         }
